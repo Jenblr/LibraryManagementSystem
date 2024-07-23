@@ -1,0 +1,23 @@
+<!-- app/templates/update_loan.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Loan</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Update Loan</h1>
+    <form action="/update_loan/{{ loan.id }}" method="POST">
+        <label for="book_id">Book ID:</label>
+        <input type="text" id="book_id" name="book_id" value="{{ loan.book_id }}" required><br>
+        <label for="user_id">User ID:</label>
+        <input type="text" id="user_id" name="user_id" value="{{ loan.user_id }}" required><br>
+        <label for="loan_date">Loan Date:</label>
+        <input type="date" id="loan_date" name="loan_date" value="{{ loan.loan_date }}" required><br>
+        <label for="return_date">Return Date:</label>
+        <input type="date" id="return_date" name="return_date" value="{{ loan.return_date }}"><br>
+        <input type="submit" value="Update Loan">
+    </form>
+    <a href="/loans">Back to Loans</a>
+</body>
+</html>

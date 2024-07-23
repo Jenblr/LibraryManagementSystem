@@ -1,0 +1,23 @@
+<!-- app/templates/add_loan.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Loan</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Add New Loan</h1>
+    <form action="/add_loan" method="POST">
+        <label for="book_id">Book ID:</label>
+        <input type="text" id="book_id" name="book_id" required><br>
+        <label for="user_id">User ID:</label>
+        <input type="text" id="user_id" name="user_id" required><br>
+        <label for="loan_date">Loan Date:</label>
+        <input type="date" id="loan_date" name="loan_date" required><br>
+        <label for="return_date">Return Date:</label>
+        <input type="date" id="return_date" name="return_date"><br>
+        <input type="submit" value="Add Loan">
+    </form>
+    <a href="/loans">Back to Loans</a>
+</body>
+</html>

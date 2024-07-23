@@ -1,0 +1,22 @@
+<!-- app/templates/loans.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loans</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Loans</h1>
+    <a href="/add_loan">Add New Loan</a>
+    <ul>
+        {% for loan in loans %}
+        <li>
+            Book ID: {{ loan.book_id }}, User ID: {{ loan.user_id }}, Loan Date: {{ loan.loan_date }}, Return Date: {{ loan.return_date }}
+            <a href="/update_loan/{{ loan.id }}">Edit</a>
+            <a href="/delete_loan/{{ loan.id }}" onclick="return confirm('Are you sure you want to delete this loan?');">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
